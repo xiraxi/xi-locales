@@ -1,0 +1,8 @@
+*.swp
+.bundle
+db/*.sqlite3
+db/*.sqlite3-journal
+log/*.log
+tmp/**/*
+Gemfile.lock
+tmp/keys
