@@ -1,0 +1,12 @@
+
+en:
+  translations:
+    index:
+      title: Translations
+
+  admin_index:
+    groups:
+      locales: Locales
+
+    items:
+      translations: Translations

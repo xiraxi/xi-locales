@@ -1,0 +1,25 @@
+
+body.admin {
+  .translations {
+    ul {
+      list-style-type: none;
+      margin-bottom: 1em;
+
+      span.key {
+        color: $mainmenu-color;
+        font-size: 110%;
+        cursor: pointer;
+        margin-right: 1em;
+
+        span.icon {
+          margin-right: 1ex;
+        }
+      }
+
+      span.value {
+        display: block;
+        margin-left: 1em;
+      }
+    }
+  }
+}

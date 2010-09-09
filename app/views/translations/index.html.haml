@@ -1,0 +1,15 @@
+
+%h1
+  = t "translations.index.title"
+
+.translations
+  .available_locales
+    - locales do |item|
+      = link_to item[:label], :locale => item[:locale], :class => (params[:locale] == item[:locale].to_s ? "selected" : nil)
+
+  - if I18n.available_locales.any? {|l| l.to_s == params[:locale].to_s }
+    .keys
+      = show_locales_tree t("", :locale => params[:locale]), ""
+
+%script
+  = "window.current_locale = #{params[:locale].to_json};".html_safe
