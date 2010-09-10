@@ -9,7 +9,9 @@ body.admin {
     .filter {
       padding: 1ex;
 
-      input { size: 30em; }
+      input { 
+        width: 30em; 
+      }
     }
 
     ul {
