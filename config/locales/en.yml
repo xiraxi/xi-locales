@@ -3,6 +3,7 @@ en:
   translations:
     index:
       title: Translations
+      filter_help: Show items with
 
   admin_index:
     groups:

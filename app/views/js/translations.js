@@ -63,4 +63,44 @@ jQuery(function() {
 
     self.children("span.value").hide().before(form);
   });
+
+
+  var last_filter_timeout = 0;
+  translations.find("div.filter").show().find("input#filter_words").keypress(function() {
+    var input = this;
+    if(last_filter_timeout)
+      clearTimeout(last_filter_timeout);
+
+    last_filter_timeout = setTimeout(function() {
+      last_filter_timeout = 0;
+
+      if(input._last_known_value == input.value)
+        return;
+
+      var words = input.value.toLowerCase().split();
+      translations.find(".results").remove();
+      if(input.value.length == 0) {
+        translations.find("div.keys").show();
+      } else {
+        var result_list = $("<ul>", {"class": "results"});
+        translations.find("li").each(function() {
+          var data_value = this.getAttribute("data-value");
+          if(data_value) {
+            data_value = data_value.toLowerCase();
+            for(var i = 0; i < words.length; i++) {
+              if(data_value.indexOf(words[i]) < 0)
+                return; // Next <li>
+            }
+
+            // All the words was found
+            var new_li = $(this.cloneNode(true));
+            new_li.find("span.key").text(this.getAttribute("data-key"));
+            result_list.append(new_li);
+          }
+        });
+        translations.find("div.keys").hide().before(result_list)
+      }
+    }, 300);
+  });
+
 });

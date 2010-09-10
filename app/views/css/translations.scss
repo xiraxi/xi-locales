@@ -1,6 +1,17 @@
 
 body.admin {
   .translations {
+    .available_locales {
+      a { color: $link-color; }
+      a.selected { font-weight: bold; font-size: 120%; text-decoration: underline; }
+    }
+
+    .filter {
+      padding: 1ex;
+
+      input { size: 30em; }
+    }
+
     ul {
       list-style-type: none;
       margin-bottom: 1em;

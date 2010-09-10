@@ -2,9 +2,11 @@ es:
   translations:
     index:
       title: Traducciones
+      filter_help: Mostrar entradas con
 
   admin_index:
     groups:
       locales: Literales
+
     items:
       translations: Traducciones

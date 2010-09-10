@@ -5,9 +5,13 @@
 .translations
   .available_locales
     - locales do |item|
-      = link_to item[:label], :locale => item[:locale], :class => (params[:locale] == item[:locale].to_s ? "selected" : nil)
+      = link_to item[:label], { :locale => item[:locale] }, :class => (params[:locale] == item[:locale].to_s ? "selected" : nil)
 
   - if I18n.available_locales.any? {|l| l.to_s == params[:locale].to_s }
+    .filter{:style => "display: none"}
+      = t "translations.index.filter_help"
+      %input#filter_words
+
     .keys
       = show_locales_tree t("", :locale => params[:locale]), ""
 
