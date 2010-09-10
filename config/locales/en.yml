@@ -6,7 +6,7 @@ en:
 
   admin_index:
     groups:
-      locales: Locales
+      locales: Texts
 
     items:
       translations: Translations
